@@ -1,6 +1,14 @@
----
 language: ruby
 cache: bundler
 rvm:
-  - 2.7.0
+- 2.7.0
 before_install: gem install bundler -v 2.1.0.pre.1
+script: bundle exec rake test
+deploy:
+  provider: rubygems
+  api_key:
+    secure: d0LxftC0CK7vC7yVnrbJ5L+eVbmwSdLYYMlWjw9U5OAyJWQwoKl7xVjR6iTYtVK9zzVoZjiX0rTCgNk+XzATCjayfpg5L1qzucTOVdWIQKmSJ1BJWc5JoidlXujYolHvBeBuwZ9uUL6ZmP/K5odZaPLZvS0LBFAEQkwUbyEvjmgb2ITjfT7Zc/H+CLrDMW2JQpFYB6cPmiDO8he7nnBZGa45qssY/1lq8feHhhI5lfqwZBDeMXE5Bw+eXP7j++CUVtD3KsZlE3IuU1TFPl3YkA6ZpEiwIAs2lFPGyQKco6SKKNoNZsQURUDuxdPxVeJf8ELKniXhGTHm9gwJ1LLSj0Z7R+FclXbPGUoxND9YZItXURQhVCIOKD8jHQoPl11wc2pGftayjRnCpJoEVeXjNr0DX4HR+i5EpGLk89A/B/1kLHtm71wCpR2Mp6lwPKe8ZBhCyOjE4wHKrZkZ0bWppi8HU7Ku9X1TF2CNoWXH6NLFfo3qF7blC+leQ1GTkou193vmwc77rYMAWIHoYQQsx22cdiZwkWk4sri5eHJg8ylJcF/mtbCo+5Kn5ENMKmosPbiwA0mVzrKTROVtdu7BeLVk+kMk37G8QD6hdV74fzYPSweK8MLg/FxBVESM1DNCS3ZjT8HEceoiHKRl/1VoMJXzYCmS6j8DYcuA3CfpkKY=
+  gem: abstrakt
+  on:
+    tags: true
+    repo: ViXP/abstrakt
